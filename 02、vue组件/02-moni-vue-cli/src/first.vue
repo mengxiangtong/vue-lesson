@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="">
-    我是一个单个组件
+    _________________
     <Login></Login>
   </div>
 </template>

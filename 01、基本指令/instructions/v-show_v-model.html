@@ -9,7 +9,6 @@
 
   <style>
     body{
-      background-color: green;
     }
     #showDiv{
       display: flex;
@@ -32,11 +31,7 @@
 <body>
 
 <div id="container">
-  <button @click="clickMe()">{{defaultButton}}</button>
-  <!-- 如果 v-show = true 的话就会显示 此 div  -->
-  <div v-show="flag" id="showDiv">
-    <span>我是 v-show</span>
-  </div>
+  <button @click="clickMe()">{{defaultButton}}</button> 
   <button @click="change()">改变文本的值</button>
   <input type="text" v-model="itext" class="myinput"> <br/>
   你输入的值是：<font class="myfont">{{itext}}</font>
@@ -50,7 +45,7 @@
       flag:false,
       // 默认按钮显示字样
       defaultButton:'显示',
-      itext: ''
+      itext: '555'
     },
     methods:{
       // 按钮点击的方法

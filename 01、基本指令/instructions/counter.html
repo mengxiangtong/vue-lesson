@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta charset="utf-8">
+		<title>计算器</title>
+		<script src="../js/vue.js"></script>
+		<style>
+			.d{
+				background-color: #26A2FF;
+				width: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="n1" />
+			<select v-model="opt">
+				<option value="+">+</option>
+				<option value="-">-</option>
+				<option value="*">*</option>
+				<option value="/">/</option>
+			</select>
+			<input type="text" v-model="n2" />
+			<br/>
+			<input type="button" value="=" @click="cal"  class="d"/>
+			<br/>
+			<input type="text" v-model="n" />
+		</div>
+		<script>
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					n1: 2,
+					n2: 1,
+					opt: '+',
+					n: '0'
+				},
+				methods: {
+					cal() {
+						//alert('33')
+						switch (this.opt) {
+							case '+':
+								this.n = parseInt(this.n1) + parseInt(this.n2)
+								break;
+							case '-':
+								this.n = parseInt(this.n1) - parseInt(this.n2)
+								break;
+							case '*':
+								this.n = parseInt(this.n1) * parseInt(this.n2)
+								break;
+							case '/':
+								this.n = parseInt(this.n1) / parseInt(this.n2)
+								break;
+						}
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
